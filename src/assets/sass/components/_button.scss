@@ -1,0 +1,35 @@
+.button {
+  font-family: var(--ff-heading);
+  background-color: var(--bg-white);
+  padding: 12px 40px;
+  position: relative;
+  z-index: 1;
+  color: var(--c-dark);
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+  border-radius: 5px;
+  min-width: 130px;
+  @include breakpoint(xxl) {
+    min-width: 150px;
+    font-size: 18px;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 55%;
+    background-color: var(--c-base);
+    z-index: -1;
+    border-radius: 5px 0 0 5px;
+    transition: all 0.3s linear;
+  }
+  &:hover,
+  &.active {
+    &::before {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
